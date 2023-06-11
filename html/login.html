@@ -9,6 +9,25 @@
         <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
         <!-- login CSS -->
         <link href="../css/login.css" rel="stylesheet">
+        <!-- My own styles -->
+        <link href="../css/custom.css" rel="stylesheet">
+
+        <style>
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        </style>
+
 </head>
 
 <body>
@@ -51,7 +70,7 @@
                         <br>
                     </div>
 
-                    <div style = "text-align: center;"><input type="submit" value="Login"></div>
+                    <div style = "text-align: center;"><input type="submit" id="login" value="Login"></div>
                     <br>
                     <p style = "text-align: left; font-size: 14px;">Don't have an account?<a href="../html/register.html">&nbsp;Register here.</a></p>
                 </form>
