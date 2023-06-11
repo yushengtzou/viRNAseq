@@ -6,31 +6,25 @@ if (!isset($_SESSION['username'])) {
     header('Location: login.php'); // Redirect to the login page
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>viRNAseq</title>
+        <title>viRNAseq</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-
-     <!-- D3.js -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="../js/vis.js"></script>
-    <style>
-    .custom-dropdown-menu {
-        top: 120% !important;
-    }
-    </style>
+        <!-- CSS: -->
+        <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
+        <!-- My own styles -->
+        <link href="../css/custom.css" rel="stylesheet">
 </head>
+
 <body>
-    <header>
+
+    <!--    NAVIGATION BAR    -->
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px;">
             <div class="container-fluid justify-content-between">
                 <a class="navbar-brand ms-3" href="../index.php">viRNAseq</a>
@@ -62,8 +56,8 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </nav>
-    </header>
-    <!-- Main Content -->
+    <!--            End of Navigation Bar        -->
+
     <main class="container mt-3">
         <section>
             <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
@@ -74,12 +68,14 @@ if (!isset($_SESSION['username'])) {
         <div style = "display: flex; justify-content: center; margin-top: 30px;"><svg id="scatterplot2"></svg></div>
     </main>
     
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Libraries (d3, bootstrap) -->
+<script src="../js/bundle.js"></script>
+<script src="../js/bs/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="js/bs/bootstrap.min.js"></script>
+<!-- Main -->
+<script src="../js/vis.js"></script>
+
 </body>
 </html>
 

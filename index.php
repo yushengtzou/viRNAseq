@@ -70,7 +70,7 @@
                     <div id = "svg" style = "display: flex; justify-content: center;">
                         <div id="menus">
                               <span id="y-menu"></span>
-                              vs.
+                              <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
                         <svg id="scatterplot"></svg>
