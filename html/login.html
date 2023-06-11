@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viRNAseq</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
+    <!-- login CSS -->
+    <link href="../css/login.css" rel="stylesheet">
+     <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px;">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand ms-3" href="../index.php">viRNAseq</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav" style="display: flex; align-items: center;">
+                <li class="nav-item mx-2"><a class="nav-link" href="../php/info.php">Info</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="share.html">Examples</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="#"">Log in / Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <section style = "text-align: center; margin: 36px;">
+            <h1>Log in</h1>
+        </section>
+
+        <section>
+            <div style = "display: flex; justify-content: center;">
+                <form action="/php/login.php" method="post">
+                    <div style = "text-align: left;">
+                        <label for="username">Username&nbsp</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <br>
+
+                        <label for="password">Password&nbsp&nbsp</label>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                    </div>
+
+                    <div style = "text-align: center;"><input type="submit" value="Login"></div>
+                    <br>
+                    <p style = "text-align: left; font-size: 14px;">Don't have an account?<a href="../html/register.html">&nbsp;Register here.</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+     <!-- Bootstrap JS -->
+    <script src="../js/bs/bootstrap.min.js"></script>
+</body>
+</html>
+
