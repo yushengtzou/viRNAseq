@@ -43,14 +43,13 @@
                                         </ul>
                                     </li>';
                                 } else {
-                                    echo '<li class="nav-item mx-2"><a class="nav-link" href="./html/login.html">Log in / Sign up</a></li>';
+                                    echo '<li class="nav-item mx-2"><a class="nav-link" href="../html/login.html">Log in / Sign up</a></li>';
                                 }
                                 ?>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
     <!--            End of Navigation Bar        -->
 
     <div id="left_panel">

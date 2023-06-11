@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>viRNAseq</title>
+        <title>viRNAseq</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
-    <!-- login CSS -->
-    <link href="../css/login.css" rel="stylesheet">
-     <!-- D3.js -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-
+        <!-- Bootstrap CSS -->
+        <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
+        <!-- login CSS -->
+        <link href="../css/login.css" rel="stylesheet">
 </head>
+
 <body>
-    <header>
+
+    <!--    NAVIGATION BAR    -->
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px;">
             <div class="container-fluid justify-content-between">
                 <a class="navbar-brand ms-3" href="../index.php">viRNAseq</a>
@@ -25,14 +25,13 @@
                     <ul class="navbar-nav" style="display: flex; align-items: center;">
                 <li class="nav-item mx-2"><a class="nav-link" href="../php/info.php">Info</a></li>
                         <li class="nav-item mx-2"><a class="nav-link" href="share.html">Examples</a></li>
-                        <li class="nav-item mx-2"><a class="nav-link" href="#"">Log in / Sign up</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="#">Log in / Sign up</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+    <!--            End of Navigation Bar        -->
     
-    <!-- Main Content -->
     <main>
         <section style = "text-align: center; margin: 36px;">
             <h1>Log in</h1>
@@ -60,9 +59,13 @@
         </section>
     </main>
     
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-     <!-- Bootstrap JS -->
-    <script src="../js/bs/bootstrap.min.js"></script>
+<!-- Libraries (d3, bootstrap) -->
+<script src="../js/bundle.js"></script>
+<script src="../js/bs/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- Main -->
+<script src="../js/vis.js"></script>
+
 </body>
 </html>
-
