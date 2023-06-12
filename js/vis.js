@@ -13,6 +13,12 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
             case "Paired":
                 color = d3.scaleOrdinal(d3.schemePaired);
                 break;
+            case "Set1":
+                color = d3.scaleOrdinal(d3.schemeSet1);
+                break;
+            case "Set2":
+                color = d3.scaleOrdinal(d3.schemeSet2);
+                break;
             case "Set3":
                 color = d3.scaleOrdinal(d3.schemeSet3);
                 break;

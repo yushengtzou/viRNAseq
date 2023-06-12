@@ -104,6 +104,8 @@
                                     <select id = 'colorSchemeSelect'>
                                     <option>Category10</option>
                                     <option>Paired</option>
+                                    <option>Set1</option>
+                                    <option>Set2</option>
                                     <option>Set3</option>
                                     <option>Tableau10</option>
                                     <option>Sinebow</option>
