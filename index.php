@@ -61,19 +61,19 @@
                         <div class="card-header">Getting Started</div>
                         <div class="card-body">
                             <h5 class="card-title">Examples</h5>
-                            <p class="card-text">PacBio, Illumina, and genome/assembly examples shown in the Examples tab above.</p>
+                            <p class="card-text">PBMCs from 10x Genomics examples shown in the Examples tab above.</p>
                             <h5 class="card-title">Visualize your own scRNA-seq data</h5>
                             <p class="card-text">viRNAseq can visualize enormous types of scRNA seq data.</p>
 
                         </div>
                     </div>
-                    <div id = "svg" style = "display: flex; justify-content: center;">
+                    <div id = "svg" style = "display: flex; justify-content: flex-start;">
                         <div id="menus">
                               <span id="y-menu"></span>
                               <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
-                        <svg id="scatterplot"></svg>
+                        <svg id="scatterplot" style="padding-left: 60px; padding-top: 12px;"></svg>
                     </div>
 
     </div>

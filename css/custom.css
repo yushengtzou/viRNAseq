@@ -19,17 +19,21 @@ body {
     visibility: ;
 }
 
-svg {
+#svg {
 	background-color: #ffffff; /*white*/
         visibility: hidden;
     	padding: 2vmin 2vmin 2vmin 2vmin;
         border-radius: 3px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.09);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 742px;
+        height: 600px;
 }
 
-.svg {
-    	padding: 2vmin 2vmin 2vmin 2vmin;
-
+#scatterplot {
+    align-self: flex-start;
 }
 
 .custom-dropdown-menu {
