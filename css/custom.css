@@ -36,6 +36,10 @@ body {
     align-self: flex-start;
 }
 
+#set_card {
+        visibility: hidden;
+}
+
 .custom-dropdown-menu {
     top: 120% !important;
 }

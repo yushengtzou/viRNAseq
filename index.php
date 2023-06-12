@@ -91,6 +91,26 @@
                         </div>
                     </div>
                 </div>
+                <br>
+
+                <!-- Setting Card -->
+                <div class="col-lg-11">
+                    <div class="card card-custom" id = "set_card">
+                        <div class="card-header">Settings</div>
+                        <div class="card-body">
+                            <p>
+                                <label>Color Schemes&nbsp;
+                                    <select id = 'colorSchemeSelect'>
+                                    <option>Category10</option>
+                                    <option>Paired</option>
+                                    <option>Set3</option>
+                                    <option>Tableau10</option>
+                                    <option>Sinebow</option>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
     </div>
 
 <!-- Libraries (d3, bootstrap) -->
