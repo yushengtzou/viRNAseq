@@ -13,6 +13,7 @@
         <link href="../css/bs/bootstrap.min.css" rel="stylesheet">
         <!-- My own styles -->
         <link href="../css/custom.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -100,8 +101,8 @@
                         <div class="card-header">Settings</div>
                         <div class="card-body">
                             <p>
-                                <label>Color Schemes&nbsp;
-                                    <select id = 'colorSchemeSelect'>
+                                <label>Color Schemes&nbsp;</label>
+                                <select id = 'colorSchemeSelect'>
                                     <option>Category10</option>
                                     <option>Paired</option>
                                     <option>Set1</option>
@@ -109,8 +110,9 @@
                                     <option>Set3</option>
                                     <option>Tableau10</option>
                                     <option>Sinebow</option>
-                                </label>
+                                </select>
                             </p>
+                            <button onclick="saveAsPng()" id="saveButton">Save as png</button>
                         </div>
                     </div>
                 </div>
