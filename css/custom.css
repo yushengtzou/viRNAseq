@@ -1,6 +1,6 @@
 body {
 	padding-bottom: 30px;
-        background-color: #f9f9f9; /*gray*/
+        background-color: #f7f7f7; /*gray*/
 }
 
 #left_panel {
@@ -64,4 +64,30 @@ body {
 }
 
 
+#saveButton {
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 4px; /* Rounded corners */
+    border: 2px solid #C0C0C0; /* Light gray border */
+}
+
+div.tooltip {
+        position: absolute;
+        text-align: center;
+        width: max-content;
+        height: min-content;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-right: 7px;
+        padding-left: 7px;
+        font: 12px sans-serif;
+        border: 0px;
+        outline: 1px solid black;
+        border-radius: 2px;
+        pointer-events: none;
+}
 

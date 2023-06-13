@@ -13,6 +13,7 @@
         <link href="css/bs/bootstrap.min.css" rel="stylesheet">
         <!-- My own styles -->
         <link href="css/custom.css" rel="stylesheet">
+        
 </head>
 
 <body>
@@ -73,6 +74,8 @@
                               <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
+                        <div class="tooltip" id="tooltip">
+                        </div>
                         <svg id="scatterplot" style="padding-left: 60px; padding-top: 12px;"></svg>
                     </div>
 
@@ -108,8 +111,10 @@
                                     <option>Set3</option>
                                     <option>Tableau10</option>
                                     <option>Sinebow</option>
+                                    </select>
                                 </label>
                             </p>
+                            <button onclick="saveAsPng()" id="saveButton">Save as png</button>
                         </div>
                     </div>
                 </div>

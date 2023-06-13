@@ -61,7 +61,7 @@ if (!isset($_SESSION['username'])) {
     <main class="container mt-3">
         <section>
             <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
-            <p>Your history of upload data and results:</p>
+            <p>Your history of upload records and results:</p>
         </section>
         
         <div style = "display: flex; justify-content: center; margin-top: 30px;"><svg id="scatterplot"></svg></div>
