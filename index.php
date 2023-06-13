@@ -74,7 +74,6 @@
                               <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
-                        </div>
                         <svg id="scatterplot" style="padding-left: 60px; padding-top: 12px;"></svg>
                     </div>
 
