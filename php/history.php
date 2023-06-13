@@ -1,10 +1,35 @@
 <?php
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Check if the user is not logged in
 if (!isset($_SESSION['username'])) {
     header('Location: login.php'); // Redirect to the login page
     exit();
+}
+
+$userId = $_SESSION['user_id'];
+
+include('../php/db_config.php');
+
+$query = "SELECT * FROM UploadHistory WHERE user_id = ?";
+
+$stmt = $db->prepare($query);
+
+if($stmt === false) {
+    die('prepare() failed: ' . htmlspecialchars($db->error));
+}
+
+$stmt->bind_param("i", $userId);
+
+if($stmt->execute()) {
+    $result = $stmt->get_result();
+    $records = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 ?>
 
@@ -62,6 +87,24 @@ if (!isset($_SESSION['username'])) {
         <section>
             <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
             <p>Your history of upload records and results:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Filename</th>
+                        <th>Upload Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($records as $record) : ?>
+                        <tr>
+                            <td><?php echo $_SESSION['username']; ?></td>
+                            <td><?php echo $record['filename']; ?></td>
+                            <td><?php echo $record['upload_time']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </section>
         
         <div style = "display: flex; justify-content: center; margin-top: 30px;"><svg id="scatterplot"></svg></div>

@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verify the password with the hashed password in the database
             if (password_verify($password, $user['password'])) {
                 $_SESSION['username'] = $username;
+                $_SESSION['user_id'] = $username;
                 $_SESSION['success'] = "You are now logged in";
                 header('location: ../php/history.php');
                 exit(); // use exit after redirection to prevent further script execution

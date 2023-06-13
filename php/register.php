@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO users (username, password) VALUES('$username', '$password')";
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $username;
         $_SESSION['success'] = "You are now registered and can log in";
         header('location: ../html/login.html');
     }
