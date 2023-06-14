@@ -99,3 +99,12 @@ a {
 a:hover {
   color:#069;
 }
+
+.filename-column {
+    width: 60%;
+}
+
+.upload-time-column {
+    width: 40%;
+}
+

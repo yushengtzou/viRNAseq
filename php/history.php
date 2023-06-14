@@ -86,22 +86,20 @@ if($stmt->execute()) {
 
     <main class="container mt-3">
         <section>
-            <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
-            <p>Your history of upload records and results:</p>
-            <table class="table">
+            <h1 style="margin-top: 21px;">Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+            <p>Your history of upload records:</p>
+            <table class="table" style="margin-top: 21px;">
                 <thead>
                     <tr>
-                        <th>Username</th>
-                        <th>Filename</th>
-                        <th>Upload Time</th>
+                        <th class="filename-column">Filename</th>
+                        <th class="upload-time-column">Upload Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($records as $record) : ?>
                         <tr>
-                            <td><?php echo $_SESSION['username']; ?></td>
-                            <td><?php echo $record['filename']; ?></td>
-                            <td><?php echo $record['upload_time']; ?></td>
+                            <td class="filename-column"><?php echo $record['filename']; ?></td>
+                            <td class="upload-time-column"><?php echo $record['upload_time']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
