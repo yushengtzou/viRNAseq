@@ -23,7 +23,8 @@ if(isset($_POST["submit"])) {
     
     if ($stmt === false) { die($conn->error); }
     
-    $stmt->bind_param("sss", $username, $fileName, date("Y-m-d H:i:s"));
+    $date = date("Y-m-d H:i:s");
+    $stmt->bind_param("sss", $username, $fileName, $date);
     $stmt->execute();
   
     echo "Record saved successfully";

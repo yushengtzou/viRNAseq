@@ -75,7 +75,7 @@
                               <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
-                        <svg id="scatterplot"></svg>
+                        <svg id="scatterplot" style="padding-left: 80px; padding-top: 12px;"></svg>
                     </div>
 
     </div>
@@ -119,9 +119,9 @@
     </div>
 
 <!-- Libraries (d3, bootstrap) -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="../js/bundle.js"></script>
 <script src="../js/bs/bootstrap.min.js"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
 
 <!-- Main -->
 <script src="../js/vis.js"></script>

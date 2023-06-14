@@ -57,9 +57,11 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
         x.domain(d3.extent(data, d => +d[xValue])).nice();
         y.domain(d3.extent(data, d => +d[yValue])).nice();
 
+         const svgWidth = width + margin.left + margin.right + 180;  // extra 150 units for the legend
         const svg = d3.select(`#${elementId}`)
-        .attr('width', width + margin.left + margin.right)
+        .attr('width', svgWidth)
         .attr('height', height + margin.top + margin.bottom);
+
 
         svg.append("text")
         .attr("x", (width + margin.left + margin.right) / 2+10)
@@ -108,7 +110,35 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
                 .duration(500)
                 .style("opacity", 0);
         });
+
+        // Get unique clusters and sort them in ascending order
+        let clusters = Array.from(new Set(data.map(d => d[cluster]))).sort((a, b) => a - b);
+
+        // Append a group to hold the legend items, positioned to the right of the plot
+        let legend = svg.append("g")
+            .attr("transform", `translate(${width + 80},${margin.top})`);
+
+        // Create one legend item for each unique cluster
+        clusters.forEach((c, i) => {
+            let legendItem = legend.append("g")
+                .attr("transform", `translate(0, ${i * 20})`);
+
+            // Add the color square
+            legendItem.append("rect")
+                .attr("width", 10)
+                .attr("height", 10)
+                .attr("fill", color(c));
+
+            // Add the text label
+            legendItem.append("text")
+                .attr("x", 15)
+                .attr("y", 10)
+                .text(c);
+        });
+
     }
+
+
 
     // Initial draw
     drawPlot();

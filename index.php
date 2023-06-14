@@ -121,11 +121,12 @@
     </div>
 
 <!-- Libraries (d3, bootstrap) -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="js/bundle.js"></script>
 <script src="js/bs/bootstrap.min.js"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
 
 <!-- Main -->
 <script src="js/vis.js"></script>
 
 </body>
+</html>
