@@ -1,6 +1,6 @@
 function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
     // Color scale
-    var color = d3.scaleOrdinal();
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
 
     // Define a div for the tooltip
     var tooltip = d3.select("body").append("div")	
@@ -67,6 +67,13 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
         .attr("text-anchor", "middle")
         .style("font-size", "20px") 
         .text("t-SNE Projection of Cells by Clustering"); 
+
+        // Color gradient bar
+
+
+
+
+        // End color gradient bar
 
         svg.append('g').call(xAxis);
         svg.append('g').call(yAxis);
