@@ -5,17 +5,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
 // Check if the user is not logged in
 if (!isset($_SESSION['username'])) {
     header('Location: login.php'); // Redirect to the login page
     exit();
 }
 
-$userId = $_SESSION['user_id'];
+$username = $_SESSION['username'];
 
 include('../php/db_config.php');
 
-$query = "SELECT * FROM UploadHistory WHERE user_id = ?";
+$query = "SELECT * FROM UploadHistory WHERE username = ?";
 
 $stmt = $db->prepare($query);
 
@@ -23,7 +24,7 @@ if($stmt === false) {
     die('prepare() failed: ' . htmlspecialchars($db->error));
 }
 
-$stmt->bind_param("i", $userId);
+$stmt->bind_param("s", $username);
 
 if($stmt->execute()) {
     $result = $stmt->get_result();

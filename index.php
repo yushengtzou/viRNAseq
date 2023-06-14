@@ -74,7 +74,7 @@
                               <!-- vs. -->
                               <span id="x-menu"></span>
                         </div>
-                        <svg id="scatterplot" style="padding-left: 60px; padding-top: 12px;"></svg>
+                        <svg id="scatterplot" style="padding-left: 80px; padding-top: 12px;"></svg>
                     </div>
 
     </div>
@@ -86,9 +86,12 @@
                     <div class="card card-custom">
                         <div class="card-header">Input Data</div>
                         <div class="card-body">
+                        <form action="./php/upload_file.php" method="post" enctype="multipart/form-data">
                             <p class="card-text">Please upload the data</p>
-                                <input type="file" id="csvFile" name="files"/>
-                                <input type="submit" id="submit" value="Upload File" name="submit" style="margin-top: 27px;">
+                            <input type="file" id="csvFile" name="files"/>
+                            <input type="submit" id="submit" value="Upload File" name="submit" style="margin-top: 27px;">
+                        </form>
+
                         </div>
                     </div>
                 </div>

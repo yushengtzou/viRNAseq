@@ -66,10 +66,25 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
         .attr("y", margin.top / 2)
         .attr("text-anchor", "middle")
         .style("font-size", "20px") 
-        .text("t-SNE plot"); 
+        .text("t-SNE Projection of Cells by Clustering"); 
 
         svg.append('g').call(xAxis);
         svg.append('g').call(yAxis);
+
+        svg.append("text")             
+            .attr("transform",
+                  "translate(" + (width/2) + " ," + 
+                                 (height + margin.top - 10) + ")")
+            .style("text-anchor", "middle")
+            .text("tSNE-1");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 20 - margin.left)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("tSNE-2");
 
         svg.append('g')
         .selectAll('circle')
@@ -132,25 +147,42 @@ function saveAsPng() {
     image.src = 'data:image/svg+xml;base64,' + btoa(xml);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('submit').addEventListener('click', function(e) {
-        e.preventDefault();  // Prevent form from submitting
-        let fileInput = document.getElementById('csvFile');
-        let file = fileInput.files[0];
+document.getElementById('submit').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent form from submitting
+    let fileInput = document.getElementById('csvFile');
+    let file = fileInput.files[0];
 
-        let reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('svg').style.visibility = 'visible';
-            document.getElementById('set_card').style.visibility = 'visible';
-            let contents = e.target.result;
-            let data = d3.csvParse(contents);
+    let reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('svg').style.visibility = 'visible';
+        document.getElementById('set_card').style.visibility = 'visible';
+        let contents = e.target.result;
+        let data = d3.csvParse(contents);
 
-            tsnePlot("scatterplot", data, 'Barcode','TSNE-1', 'TSNE-2', 'Cluster');
-        };
-        var introCard = document.getElementById('intro_card');
-        document.getElementsByTagName('svg')[0].style.visibility = 'visible';
-        introCard.style.display = 'none';
+        tsnePlot("scatterplot", data, 'Barcode','TSNE-1', 'TSNE-2', 'Cluster');
 
-        reader.readAsText(file);
-    });
+        // Create a FormData object
+        let formData = new FormData();
+        // Add the file to the form data
+        formData.append("files", file);
+        formData.append("submit", "Upload File");  // add this line
+        // Send the form data to the server using Fetch API
+        fetch('../php/upload_file.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
+    };
+    var introCard = document.getElementById('intro_card');
+    document.getElementsByTagName('svg')[0].style.visibility = 'visible';
+    introCard.style.display = 'none';
+
+    reader.readAsText(file);
 });
+
+
