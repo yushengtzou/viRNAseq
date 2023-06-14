@@ -91,3 +91,11 @@ div.tooltip {
         pointer-events: none;
 }
 
+a {
+    text-decoration: none; 
+    color:#39c;
+}
+
+a:hover {
+  color:#069;
+}

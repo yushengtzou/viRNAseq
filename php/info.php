@@ -60,12 +60,12 @@
                     <div class="card card-custom" id = "intro_card">
                         <div class="card-header">Information about viRNAseq</div>
                         <div class="card-body">
-                            <p class="card-text">viRNAseq is made by Yu Sheng Tzou</p>
-                            <p>The code is open-source at</p>
+                            <p class="card-text">viRNAseq is made by <a href='https://www.yushengtzou.com/'>Yu Sheng Tzou</a></p>
+                            <p>The code is open-source at <a href= 'https://github.com/yushengtzou/viRNAseq'>https://github.com/yushengtzou/viRNAseq</a></p>
                             <p>viRNAseq stands on the shoulders of giants:</p>
                             <ul>
-                                <li>Visualizations created using D3 from Mike Bostock</li>
-                                <li>Panel and navigation bar created using styles from Bootstrap</li>
+                                <li>Visualizations created using <a href='https://d3js.org/'>D3</a> from Mike Bostock</li>
+                                <li>Panel and navigation bar created using styles from <a href='https://getbootstrap.com/'>Bootstrap</a></li>
                             </ul>
                         </div>
                     </div>
