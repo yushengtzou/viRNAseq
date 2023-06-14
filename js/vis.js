@@ -71,20 +71,20 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
         svg.append('g').call(xAxis);
         svg.append('g').call(yAxis);
 
-        svg.append("text")             
-            .attr("transform",
-                  "translate(" + (width/2) + " ," + 
-                                 (height + margin.top - 10) + ")")
-            .style("text-anchor", "middle")
-            .text("tSNE-1");
-
-        svg.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 20 - margin.left)
-            .attr("x",0 - (height / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .text("tSNE-2");
+        // svg.append("text")             
+        //     .attr("transform",
+        //           "translate(" + (width/2) + " ," + 
+        //                          (height + margin.top - 10) + ")")
+        //     .style("text-anchor", "middle")
+        //     .text("tSNE-1");
+        //
+        // svg.append("text")
+        //     .attr("transform", "rotate(-90)")
+        //     .attr("y", 20 - margin.left)
+        //     .attr("x",0 - (height / 2))
+        //     .attr("dy", "1em")
+        //     .style("text-anchor", "middle")
+        //     .text("tSNE-2");
 
         svg.append('g')
         .selectAll('circle')
