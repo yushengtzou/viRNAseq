@@ -57,7 +57,7 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
         x.domain(d3.extent(data, d => +d[xValue])).nice();
         y.domain(d3.extent(data, d => +d[yValue])).nice();
 
-         const svgWidth = width + margin.left + margin.right + 180;  // extra 150 units for the legend
+         const svgWidth = width + margin.left + margin.right + 168;  // extra 150 units for the legend
         const svg = d3.select(`#${elementId}`)
         .attr('width', svgWidth)
         .attr('height', height + margin.top + margin.bottom);
@@ -116,7 +116,7 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
 
         // Append a group to hold the legend items, positioned to the right of the plot
         let legend = svg.append("g")
-            .attr("transform", `translate(${width + 80},${margin.top})`);
+            .attr("transform", `translate(${width + 66},${margin.top})`);
 
         // Create one legend item for each unique cluster
         clusters.forEach((c, i) => {
@@ -147,14 +147,24 @@ function tsnePlot(elementId, data, barcode, xValue, yValue, cluster) {
 function saveAsPng() {
     // get the svg element
     let svg = document.querySelector('svg');  
-    // convert svg to string
-    let xml = new XMLSerializer().serializeToString(svg);  
 
+    // store original background color and set it to white
+    let originalBackground = svg.style.background;
+    svg.style.background = "#FFFFFF";
+    
+    // specify the xml namespace in your SVG string
+    let svgString = new XMLSerializer().serializeToString(svg);
+    let svgXML = '<?xml version="1.0" standalone="no"?>\r\n' + svgString; 
+    
     // create an empty canvas
     let canvas = document.createElement('canvas'); 
     let context = canvas.getContext('2d');
 
     let image = new Image();
+
+    // set the src before the onload function
+    image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgXML);
+
     image.onload = function() {
         canvas.width = image.width;
         canvas.height = image.height;
@@ -165,8 +175,10 @@ function saveAsPng() {
         // convert canvas to PNG
         a.href = canvas.toDataURL('image/png');  
         a.click();  // simulate a click
+
+        // reset SVG background color
+        svg.style.background = originalBackground;
     };
-    image.src = 'data:image/svg+xml;base64,' + btoa(xml);
 }
 
 document.getElementById('submit').addEventListener('click', function(e) {
