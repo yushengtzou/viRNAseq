@@ -171,7 +171,7 @@ function saveAsPng() {
         context.drawImage(image, 0, 0);
         // create an <a> element
         let a = document.createElement('a');  
-        a.download = 'plot.png';  // set filename
+        a.download = 't-SNE plot.png';  // set filename
         // convert canvas to PNG
         a.href = canvas.toDataURL('image/png');  
         a.click();  // simulate a click

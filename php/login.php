@@ -36,20 +36,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('location: ../php/history.php');
                 exit(); // use exit after redirection to prevent further script execution
             } else {
-                array_push($errors, "Wrong username/password combination");
+                 $_SESSION['errors'] = array("Wrong username/password combination");
+                header('location: ../html/login.html');
+                exit(); // use exit after redirection to prevent further script execution
             }
         } else {
-            array_push($errors, "User does not exist");
+            $_SESSION['errors'] = array("User does not exist");
+            header('location: ../html/register.html');
+            exit(); // use exit after redirection to prevent further script execution
         }
     }
 
     if (count($errors) > 0) {
-        echo "Errors:<br>";
+        echo "<script type='text/javascript'>";
         foreach ($errors as $error) {
-            echo $error . "<br>";
+            echo "alert('{$error}');";
         }
+        echo "</script>";
     }
 }
 
 ob_end_flush(); // send output buffer and turn off output buffering
 ?>
+
